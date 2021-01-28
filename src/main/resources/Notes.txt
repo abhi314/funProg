@@ -1,0 +1,6 @@
+1. Predicate<T>
+Takes one input and return boolean 
+	Predicate<Person> pre = p -> Gender.FEMALE.equals(p.getGen());
+	
+2. Function<T,R> 
+Takes input of type T returns output type R
