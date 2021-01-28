@@ -4,3 +4,6 @@ Takes one input and return boolean
 	
 2. Function<T,R> 
 Takes input of type T returns output type R
+    Function<Integer, Integer> plusOne = t -> ++t;
+    static Function<Integer, Integer> mul10 = t -> t * 10;
+	plusOne.andThen(mul10).apply(1)
