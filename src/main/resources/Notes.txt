@@ -1,9 +1,54 @@
 1. Predicate<T>
 Takes one input and return boolean 
-	Predicate<Person> pre = p -> Gender.FEMALE.equals(p.getGen());
+	Predicate<Person> pred = p -> Gender.FEMALE.equals(p.getGen());	
+	obj(List<Person>)Obj.stream.filter(pred)..;
+	OR
+	pred.test("09995")
+    pred.or(contain3Pred).test("94")
+    biPred.test("9995", "3")
+    Predicate<String> pred = t -> t.startsWith("9");
+    Predicate<String> contain3Pred = t -> t.contains("9");
+    BiPredicate<String, String> biPred = (t, u) -> t.contains("9") && u.contains("3");
 	
-2. Function<T,R> 
+2. Function<T, R> 
 Takes input of type T returns output type R
     Function<Integer, Integer> plusOne = t -> ++t;
     static Function<Integer, Integer> mul10 = t -> t * 10;
 	plusOne.andThen(mul10).apply(1)
+
+3. BiFunction<T, U, R>
+Takes 2 inputs T & U and returns output R
+    BiFunction<Integer, Integer, Integer> biTest = (t, v) -> (t + 1) * v;
+    biTest.apply(2, 12);
+-------------------------------------------------------------------
+4. Consumer<T>
+Consumes type T and returns nothing	
+    Consumer<Customer> cons= t->System.out.println(t.name+"|"+t.no);
+    cons.accept(new Customer("Abhi", "8451623084"));
+	
+5. BiConsumer<T, U>
+Consumes type T and U and returns nothing	
+    BiConsumer<Customer, Boolean> biCons = (t, u) -> System.out.println(t.name + "|" + (u ? t.no : "9999999999"));
+    biCons.accept(new Customer("Abhi", "8451623084"), true);
+
+==============================================================
+
+⌨️ (00:36:03) BiFunction-
+⌨️ (00:43:10) Consumer-
+⌨️ (00:48:13) BiConsumer-
+⌨️ (00:52:09) Predicate
+
+⌨️ (01:02:08) Supplier
+⌨️ (01:06:55) Let me say something
+⌨️ (01:07:29) Intro to Java Streams
+⌨️ (01:19:23) More on Java Streams
+
+⌨️ (01:23:52) Java Optionals
+⌨️ (01:31:19) Combinator Pattern
+⌨️ (01:40:28) Implementing Combinator Pattern
+⌨️ (01:55:34) Callbacks Like Javascript
+
+⌨️ (02:05:08) Lambdas
+⌨️ (02:11:37) Primitives
+⌨️ (02:15:29) Properties of Functional Programming
+⌨️ (02:20:25) Let's wrap it up
